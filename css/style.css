@@ -80,9 +80,49 @@ body{
 	color:#4f7485	 ;
 }
 
+.search{
+	display: flex;
+	padding: 5px;
+	background-color: #fafafa;
+}
+.search__btn{
+	background-color: rgb(255, 255, 255);
+	padding: 7px 30px;
+	border: 1px solid #f5f5f5;
+	color: #b6b9bb;
+}
 
+.search__input{
+	flex-grow: 1;
+	height: 35px;
+	border: 1px solid #f5f5f5;
+	background-color: rgb(255, 255, 255);
+	
+}
 
+	
+::-webkit-input-placeholder {
+	font-size: 14px;
+	color: #dfe1e1;
 
+}
+/* Firefox <18 */
+:-moz-placeholder {
+	font-size: 14px;
+	color: #dfe1e1;
+
+}
+/* Firefox 19> */
+::-moz-placeholder {
+	font-size: 14px;
+	color: #dfe1e1;
+
+}
+:-ms-input-placeholder {  
+	font-size: 14px;
+	color: #dfe1e1;
+
+}
 
 
 
