@@ -104,32 +104,15 @@ body{
 	
 }
 
+.message-input__input::placeholder,
+.search__input::placeholder{
+	text-indent: 5px;
+	font-size: 14px;
+	color: #a5a5a5;
 	
-::-webkit-input-placeholder {
-	font-size: 14px;
-	color: #d7dfdf;
-
-}
-/* Firefox <18 */
-:-moz-placeholder {
-	font-size: 14px;
-	color: #d7dfdf;
+ }
 
 
-}
-/* Firefox 19> */
-::-moz-placeholder {
-	font-size: 14px;
-	color: #d7dfdf;
-
-
-}
-:-ms-input-placeholder {  
-	font-size: 14px;
-	color: #d7dfdf;
-
-
-}
 
 .contacts {
 	display: flex;
@@ -231,6 +214,7 @@ body{
 	padding: 10px 0;
 }
 
+ 
 .message-input__input{
 	flex-grow: 1;
 	height: 50px;
