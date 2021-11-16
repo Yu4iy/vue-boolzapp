@@ -31,6 +31,8 @@ body{
 	flex-direction: column;
 	background-color: red;
 	flex-grow: 1;
+	border-right: 1px solid #b1b1b1;
+
 }
 
 .profile{
@@ -40,12 +42,12 @@ body{
 	padding: 10px;
 }
 
-.profile__img {
+.user-img {
 	height: 50px;
 	width: 50px;
 	border-radius: 50px;
 }
-.profile__name{
+.user-name{
 	flex-grow: 1;
 }
 
@@ -106,24 +108,27 @@ body{
 	
 ::-webkit-input-placeholder {
 	font-size: 14px;
-	color: #dfe1e1;
+	color: #d7dfdf;
 
 }
 /* Firefox <18 */
 :-moz-placeholder {
 	font-size: 14px;
-	color: #dfe1e1;
+	color: #d7dfdf;
+
 
 }
 /* Firefox 19> */
 ::-moz-placeholder {
 	font-size: 14px;
-	color: #dfe1e1;
+	color: #d7dfdf;
+
 
 }
 :-ms-input-placeholder {  
 	font-size: 14px;
-	color: #dfe1e1;
+	color: #d7dfdf;
+
 
 }
 
@@ -142,7 +147,7 @@ body{
 	border: 1px solid #f5f5f5;
 }
 
-.contact .profile__name{
+.contact .user-name{
 	padding: 0 20px;
 }
 
@@ -154,6 +159,65 @@ body{
 
 .right-bar{
 	width: 65%;
-	background-color: rosybrown;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	background-image: url('../img/mine.jpg');
+	background-size: 55%;
+
 }
 
+.contact-profile{
+	display: flex;
+	justify-content: space-between;
+	background-color: #eaeaea;
+	padding: 10px;
+}
+.contact-profile__user{
+	display: flex;
+	align-items: center;
+}
+.contact-profile__nav{
+	display: flex;
+	align-items: center;
+}
+
+  
+.contact-profile__nav .btn-style{
+	margin: 0 10px;
+}
+.display{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	overflow: auto;
+}
+
+.posted-message{
+
+	background-color: green;
+	align-items: center;
+	
+}
+
+
+
+
+
+.message-input{
+	display: flex;
+	align-items: center;
+	background-color: #f3eeea;
+	padding: 10px 0;
+}
+
+.message-input__input{
+	flex-grow: 1;
+	height: 50px;
+}
+.message-input-btn{
+	padding: 0 35px;
+	font-size: 25px;
+	color: #6f7679;
+}
