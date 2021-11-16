@@ -3,3 +3,55 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+/* UT */
+.btn-style{
+	color:#b1b1b1;
+	font-size: 25px;
+}
+
+body{
+	height: 100vh;
+	background-image: linear-gradient(to bottom,#32a093 0%,#32a093 15%,#dfe0d9 15%,#dfe0d9 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Lato', sans-serif;
+}
+
+.container {
+	width: 80%;
+	min-width: 900px;
+	height: 95%;
+	background-color: #fff;
+	display: flex;
+}
+.left-bar{
+	width: 35%;
+	background-color: red;
+}
+
+.profile{
+	display: flex;
+	align-items: center;
+	background-color: #eaeaea;
+	padding: 10px;
+}
+
+.profile__img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+}
+.profile__name{
+	flex-grow: 1;
+}
+
+.left-bar .btn-style{
+	margin: 0 10px;
+}
+
+
+.right-bar{
+	width: 65%;
+	background-color: rosybrown;
+}
