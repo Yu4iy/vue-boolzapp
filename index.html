@@ -21,7 +21,7 @@
 
 		<div class="left-bar">
 			<div class="profile">
-				<img class="user-img" :src="userProfile.avatar" alt="">
+				<img class="user-img" :src="`img/avatar${userProfile.avatar}.jpg`" alt="">
 				<div class="user-name">{{userProfile.name}} {{userProfile.surName}}</div>
 				<a href=""><i class="btn-style fas fa-circle-notch"></i></a>
 				<a href=""><i class="btn-style fas fa-comment-alt"></i></a>
@@ -39,8 +39,8 @@
 				<input class="search__input" placeholder="Cerca o inizia una nuova chat" type="text">
 			</label>
 			<div  class="contacts">
-				<div v-for ="elem in contacts" class="contact">
-					<img class="user-img" :src="elem.avatar" alt="">
+				<div v-for ="(elem,index) in contacts" @click = "showMessage(index)" :class = "{active: index === avtiveContact}" class="contact">
+					<img class="user-img" :src="`img/avatar${elem.avatar}.jpg`" alt="">
 					<div class="user-name">{{elem.name}}</div>
 				</div>								
 			</div>
@@ -50,35 +50,35 @@
 
 		<div class="right-bar">
 			<div class="contact-profile">				
-				<div class="contact-profile__user">
-					<img class="user-img" src="./img/avatar_1.jpg" alt="">
+				<div class="contact-profile__user ">
+					<img class="user-img mrr-10" :src="`./img/avatar${contacts[avtiveContact].avatar}.jpg`" alt="">
 					<div>
-						<div class="user-name">Micele</div>
+						<div class="user-name ">{{contacts[avtiveContact].name}}</div>
 						<div>ultimo accesso oggi alle 10.35</div>
 					</div>
 				</div>
-				<div class="contact-profile__nav">
+				<div class="contact-profile__nav ">
 					<a href=""><i class="btn-style fas fa-search"></i></i></a>
 					<a href=""><i class="btn-style  fas fa-paperclip"></i></i></a>
 					<a href=""><i class="btn-style fas fa-ellipsis-v"></i></a>
 				</div>
 			</div>
-			<div class="display">
-				<div class="posted-message">
-					<p>lorem</p>
-					<span class="date">16 11 2021 15:58:00</span>
-				</div>
-				<div class="received-message"> 
-					<p>lorem</p>
-					<span class="date">16 11 2021 15:58:00</span>
+			<div  class="display" >
+				<div class="display-wraper"  >
+					<div :class="{postMessage: contacts[avtiveContact].messages[index].status === 'sent',  'receivedMessage': contacts[avtiveContact].messages[index].status === 'received' }"
+					v-for ="(elem,index) in contacts[avtiveContact].messages">
+						<p>{{contacts[avtiveContact].messages[index].text}}</p>
+						<span class="date">16 11 2021 15:58:00</span>
+					</div>
 
 				</div>
+				
 			</div>
-			<div class="message-input">
+			<label class="message-input">
 					<a href=""><i class=" message-input-btn far fa-smile"></i></a>
-					<input class="message-input__input" type="text" placeholder="scrivi un messaggio">
+					<input class="message-input__input" type="text" placeholder="Scrivi un messaggio">
 					<a href=""><i class=" message-input-btn fas fa-microphone"></i></a>
-			</div>
+			</label>
 			
 		</div>
 	
