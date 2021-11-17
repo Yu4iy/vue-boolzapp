@@ -90,28 +90,46 @@ const root = new Vue({
 				 ],
 			},
 	  ],
+
 	  avtiveContact:0,
 	  inputValue:'',
+
 	},
+
 	methods:{
+		
 		showMessage(index){
 			this.avtiveContact = index
 		},
 		
+		
 		sentMessage(){
-			console.log(this.inputValue);
+			
 			if(this.inputValue !== ''){
 			const newMesage =
 			{
 				date: '10/01/2020 15:50:00',
 				text: this.inputValue,
 				status: 'sent'
-		  }
-		  this.contacts[this.avtiveContact].messages.push(newMesage)
-		  this.inputValue=''
-
+		  	}
+		 	this.contacts[this.avtiveContact].messages.push(newMesage)
+			this.inputValue=''
+		
+			setTimeout(()=>{
+				this.contacts[this.avtiveContact].messages.push(
+					{
+						date: '10/01/2020 15:50:00',
+						text: 'ok',
+						status: 'received'
+					})
+				 
+			}, 3000)
+		
 			}
-		}
+			
+		},
+	
+
 	}
 	
 	
