@@ -130,7 +130,7 @@ const root = new Vue({
 				this.randomResponse()
 				this.contacts[this.avtiveContact].messages.push(
 					{
-						date: 'this.date',
+						date: this.date,
 						text: this.response,
 						status: 'received'
 					})
