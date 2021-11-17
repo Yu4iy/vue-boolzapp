@@ -100,8 +100,8 @@ const root = new Vue({
 
 	methods:{
 		randomResponse(){
-			const resp = ['ok','ciao','no','FUCK YOU']
-			const i = Math.floor (Math.random() * resp.length + 1) 
+			const resp = ['ok','ciao','no','круто']
+			const i = Math.floor (Math.random() * resp.length) 
 			this.response = resp[i]
 		},
 		getDate() {
