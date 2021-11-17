@@ -68,7 +68,7 @@
 					<div :class="{postMessage: contacts[avtiveContact].messages[index].status === 'sent',  'receivedMessage': contacts[avtiveContact].messages[index].status === 'received' }"
 					v-for ="(elem,index) in contacts[avtiveContact].messages">
 						<p>{{contacts[avtiveContact].messages[index].text}}</p>
-						<span class="date">16 11 2021 15:58:00</span>
+						<span class="date">{{contacts[avtiveContact].messages[index].date}}}</span>
 					</div>
 
 				</div>
@@ -85,6 +85,7 @@
 
 
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
 	<!-- JS -->
 	<script src="./js/main.js"></script>
 </body>

@@ -93,10 +93,21 @@ const root = new Vue({
 
 	  avtiveContact:0,
 	  inputValue:'',
+	  date:'',
+	  response:'',
 
 	},
 
 	methods:{
+		randomResponse(){
+			const resp = ['ok','ciao','no','FUCK YOU']
+			const i = Math.floor (Math.random() * resp.length + 1) 
+			this.response = resp[i]
+		},
+		getDate() {
+			const today = dayjs();
+			this.date = today.format('DD/MM/YYYY HH:mm:ss');
+	  },
 		
 		showMessage(index){
 			this.avtiveContact = index
@@ -104,11 +115,11 @@ const root = new Vue({
 		
 		
 		sentMessage(){
-			
+			this.getDate() 
 			if(this.inputValue !== ''){
 			const newMesage =
 			{
-				date: '10/01/2020 15:50:00',
+				date: this.date,
 				text: this.inputValue,
 				status: 'sent'
 		  	}
@@ -116,10 +127,11 @@ const root = new Vue({
 			this.inputValue=''
 		
 			setTimeout(()=>{
+				this.randomResponse()
 				this.contacts[this.avtiveContact].messages.push(
 					{
-						date: '10/01/2020 15:50:00',
-						text: 'ok',
+						date: 'this.date',
+						text: this.response,
 						status: 'received'
 					})
 				 
