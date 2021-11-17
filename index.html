@@ -76,7 +76,7 @@
 			</div>
 			<label class="message-input">
 					<a href=""><i class=" message-input-btn far fa-smile"></i></a>
-					<input class="message-input__input" type="text" placeholder="Scrivi un messaggio">
+					<input v-on:keyup.enter = "sentMessage" v-model="inputValue" class="message-input__input" type="text" placeholder="Scrivi un messaggio">
 					<a href=""><i class=" message-input-btn fas fa-microphone"></i></a>
 			</label>
 			
