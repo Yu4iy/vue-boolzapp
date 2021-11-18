@@ -95,10 +95,22 @@ const root = new Vue({
 	  inputValue:'',
 	  date:'',
 	  response:'',
+	  searchReader:''
 
 	},
 
 	methods:{
+		contactSearch(){
+           for(let i = 0; i < this.contacts.length; i++){
+				  if(this.contacts[i].name.toLowerCase().includes(this.searchReader.toLowerCase())){ //provare con for each
+					  this.contacts[i].visible = true
+				  }else{
+						this.contacts[i].visible = false
+				  }
+			  }
+		},
+
+
 		randomResponse(){
 			const resp = ['ok','ciao','no','круто']
 			const i = Math.floor (Math.random() * resp.length) 
@@ -109,7 +121,7 @@ const root = new Vue({
 			this.date = today.format('DD/MM/YYYY HH:mm:ss');
 	  },
 		
-		showMessage(index){
+		showMessage(index){	
 			this.avtiveContact = index
 		},
 		

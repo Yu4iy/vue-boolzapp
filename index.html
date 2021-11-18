@@ -36,10 +36,10 @@
 			</div>
 			<label class="search">
 				<a href="" class="search__btn"><i class="fas fa-search"></i></a>
-				<input class="search__input" placeholder="Cerca o inizia una nuova chat" type="text">
+				<input class="search__input" v-on:keyup="contactSearch" v-model="searchReader" placeholder="Cerca o inizia una nuova chat" type="text">
 			</label>
 			<div  class="contacts">
-				<div v-for ="(elem,index) in contacts" @click = "showMessage(index)" :class = "{active: index === avtiveContact}" class="contact">
+				<div v-for ="(elem,index) in contacts" v-show="elem.visible" @click = "showMessage(index)" :class = "{active: index === avtiveContact}" class="contact">
 					<img class="user-img" :src="`img/avatar${elem.avatar}.jpg`" alt="">
 					<div class="user-name">{{elem.name}}</div>
 				</div>								
@@ -68,7 +68,7 @@
 					<div :class="{postMessage: contacts[avtiveContact].messages[index].status === 'sent',  'receivedMessage': contacts[avtiveContact].messages[index].status === 'received' }"
 					v-for ="(elem,index) in contacts[avtiveContact].messages">
 						<p>{{contacts[avtiveContact].messages[index].text}}</p>
-						<span class="date">{{contacts[avtiveContact].messages[index].date}}}</span>
+						<span class="date">{{contacts[avtiveContact].messages[index].date}}</span>
 					</div>
 
 				</div>
